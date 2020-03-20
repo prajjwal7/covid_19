@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'dart:core';
 import 'feedtemplate.dart';
 import 'custombar.dart';
 const url = "https://whoiskrishna.github.io/newsfeed/";
 int selectedIndex=0;
+
+
 
 //class API {
 //  static Future getUsers() {
@@ -43,11 +46,11 @@ class Feed extends StatefulWidget {
 class _FeedState extends State {
   var news= new List<News>();
 
-  void onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
+//  void onItemTapped(int index) {
+//    setState(() {
+//      selectedIndex = index;
+//    });
+//  }
 
   _getNews() {
     data.then((response) {
@@ -63,28 +66,14 @@ class _FeedState extends State {
     _getNews();
   }
 
-  dispose() {
-    super.dispose();
-  }
+//  dispose() {
+//    super.dispose();
+//  }
 
   @override
   build(context) {
     return Scaffold(
-        appBar: Mycustombar(),
-        bottomNavigationBar: BottomNavigationBar(
-
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.face), title: Text('Count')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.check_circle), title: Text('Check')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.wb_incandescent), title: Text('Tips')),
-          ],
-          currentIndex: selectedIndex,
-          fixedColor: Colors.greenAccent,
-          onTap: onItemTapped,
-
-        ),
+        appBar: custombar('FEED'),
         body: ListView.builder(
           itemCount: news.length,
           itemBuilder: (context, index) {

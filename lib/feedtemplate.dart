@@ -8,6 +8,7 @@ Container feedtemplate(String p,String q,String r)
     padding: EdgeInsets.all(20),
     child: new Column(
       children: <Widget>[
+        SizedBox(height: 10,),
         new Container(
           child: new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

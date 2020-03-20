@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 
-class Mycustombar extends StatelessWidget implements PreferredSizeWidget{
-  final double height=82;
+class custombar extends StatelessWidget implements PreferredSizeWidget{
+  final double height=55;
+  String s;
+  custombar(this.s);
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +13,9 @@ class Mycustombar extends StatelessWidget implements PreferredSizeWidget{
         SizedBox(height: 40),
         Row(
           children: <Widget>[
-            SizedBox(width: 40),
-            Text('FEED', style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 40, color: Colors.black,
+            SizedBox(width: 20),
+            Text(s, style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black,
             ))
           ],
         ),
