@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:coronah/talestemplate.dart';
+import 'talestemplate.dart';
 import 'package:flutter/services.dart';
 import 'dart:core';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'custombar.dart';
-const url = "https://whoiskrishna.github.io/newsfeed/";
+const url = "https://blissful-euclid-9102b5.netlify.com/";
 int selectedIndex=0;
 
 var data= http.get(url);
@@ -14,26 +14,29 @@ class Tale{
   String from;
   String article;
   int age;
-  String duration;
-  Tale(String name,String from,String article,int age,String duration)
+  int duration;
+  String stips;
+  Tale(String name,String from,String article,int age,int duration,String stips)
   {
-    this.name;
+    this.name=name;
     this.from=from;
     this.article=article;
     this.age=age;
     this.duration=duration;
+    this.stips=stips;
   }
 
   Tale.fromJson(Map json)
-      : name= json['name'],
-        from=json['from'],
-        article=json['article'],
-        age=json['age'],
-        duration=json['duration'];
+      : name= json['Sname'],
+        from=json['Sfrom'],
+        article=json['Sarticle'],
+        age=json['Sage'],
+        duration=json['Sduration'],
+        stips=json['Stips'];
 
 
   Map toJson() {
-    return {'article': article,'duration': duration,'age': age,'name': name,'from': from,};
+    return {'Sarticle': article,'Sduration': duration,'Sage': age,'Sname': name,'Sfrom': from,'Stips': stips};
   }
 }
 
@@ -82,7 +85,7 @@ class _TalesState extends State<Tales> {
                   ),
                   Flexible(
                     child: Text(
-                      "If you've successfully survived Covid-19 please share your own story for the sake of motivating people! Please don't spam since it's a life taking event. ",
+                      "If you've survived Covid-19, Please share your story for the sake of motivating the rest of us! Please don't spam, Covid-19 is a serious issue.",
                       style: TextStyle(
                         fontSize: 10,
                         color: Colors.black,
@@ -93,7 +96,7 @@ class _TalesState extends State<Tales> {
 
                   OutlineButton(
                     child: Text('Copy Link',style: TextStyle(color: Colors.blue),),
-                    onPressed: () => Clipboard.setData(ClipboardData(text: 'www.google.com')),
+                    onPressed: () => Clipboard.setData(ClipboardData(text: 'https://forms.gle/AYEo1H6zNxr1FAcY7')),
                   ),
                   SizedBox(
                     width: 10,
@@ -114,7 +117,7 @@ class _TalesState extends State<Tales> {
             child: ListView.builder(
               itemCount: tale.length,
               itemBuilder: (context, index) {
-            return newcard('Prajjwal Mishra', 'Karnataka', '20', '7 Days', 'Hi, fdsbf dsdn dsvn fsnf sfhdf sdfhsdfs sfhdsf fshfsfb asfgirjgg rghudrgd gdrgrgbgf vndvdfvnv dfvkndfvvnfb bfb bn bnvk vnk zchds vhd vdndv vnfvnfdvsc vdsv vnvvnvjs v v xcvnc,mv cvj x v vxjnv xvnv xv vxnjv vxx.dvdindvd vdvndfvn v fvfnv fvmfvmfv xdvnjdvdsvndvj fvdfmv fdbmfb cvmfbndfkdbd bohkbsfskdg');
+            return newcard(tale[index].name, tale[index].from, tale[index].age, tale[index].duration , tale[index].article,tale[index].stips);
 //                 return newcard(tale[index].name,tale[index].from,tale[index].age,tale[index].duration,tale[index].article);
               },
             )

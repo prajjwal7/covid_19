@@ -10,7 +10,7 @@ class custombar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        SizedBox(height: 40),
+        SizedBox(height: 35),
         Row(
           children: <Widget>[
             SizedBox(width: 20),

@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:coronah/count.dart';
+import 'count.dart';
 import 'symptomscheck.dart';
 import 'feed.dart';
 import 'tips.dart';
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.assignment,color: Colors.greenAccent,), title: Text('Feed')),
-          BottomNavigationBarItem(icon: Icon(Icons.face,color: Colors.greenAccent), title: Text('Count')),
+          BottomNavigationBarItem(icon: Icon(Icons.face,color: Colors.greenAccent), title: Text('Survivors')),
           BottomNavigationBarItem(
               icon: Icon(Icons.check_circle,color: Colors.greenAccent), title: Text('Check')),
           BottomNavigationBarItem(

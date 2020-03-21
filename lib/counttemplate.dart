@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-Container counttemplate(String c,int a,int d,int t,int r)
+Container counttemplate(String c,String a,String d,String t,String r)
 {
 
   return new Container(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Card newcard(n,f,a,d,t)
+Card newcard(String n,String f,int a,int d,String t,String i)
 {
   return Card(
     margin: EdgeInsets.all(20),
@@ -40,13 +40,13 @@ Card newcard(n,f,a,d,t)
                   new Row(
                     children: <Widget>[
                       Text('Age: ',style: TextStyle(color: Colors.red),),
-                      Text(a,style: TextStyle(color: Colors.black),),
+                      Text(a.toString(),style: TextStyle(color: Colors.black),),
                     ],
                   ),
                   new Row(
                     children: <Widget>[
                       Text('Duration: ',style: TextStyle(color: Colors.red),),
-                      Text(d,style: TextStyle(color: Colors.black),)
+                      Text(d.toString() + " days",style: TextStyle(color: Colors.black),)
                     ],
                   )
                 ],
@@ -70,7 +70,13 @@ Card newcard(n,f,a,d,t)
                 child: Text(t,textAlign: TextAlign.start,style: TextStyle(
                     fontSize: 15,color: Colors.black54),),
               ),
-
+              SizedBox(
+                height: 10
+              ),
+              Container(
+                child: Text(i,textAlign: TextAlign.start,style: TextStyle(
+                    fontSize: 15,color: Colors.black54),),
+              ),
             ],
           ),
           SizedBox(height: 10,),

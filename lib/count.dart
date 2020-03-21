@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'dart:core';
 import 'custombar.dart';
 import 'counttemplate.dart';
-const url = "https://whoiskrishna.github.io/newsfeed/";
+const url = "https://whoiskrishna.github.io/CountCovid/";
 int selectedIndex=0;
 
 
@@ -18,12 +18,12 @@ int selectedIndex=0;
 var data= http.get(url);
 class Counting{
   String country;
-  int active;
-  int death;
-  int total;
-  int recovered;
+  String active;
+  String death;
+  String total;
+  String recovered;
 
-  Counting(String country,int death,int active,int total,int recovered)
+  Counting(String country,String death,String active,String total,String recovered)
   {
     this.country=country;
     this.active=active;
@@ -34,13 +34,13 @@ class Counting{
 
   Counting.fromJson(Map json)
       : country= json['country'],
-        active=json['active'],
+        active=json['activ'],
         death=json['death'],
         total=json['total'],
         recovered=json['recovered'];
 
   Map toJson() {
-    return {'country': country, 'active': active,'death': death,'total': total,'recovered':recovered};
+    return {'country': country, 'activ': active,'death': death,'total': total,'recovered':recovered};
   }
 }
 
@@ -202,8 +202,8 @@ class _CountState extends State {
               child: ListView.builder(
                 itemCount: counting.length,
                 itemBuilder: (context, index) {
-                  return counttemplate('Global', 123344, 24445, 233565, 342555);
-              //    return counttemplate(counting[index].country,counting[index].active,counting[index].death,counting[index].total,counting[index].recovered);
+                  // return counttemplate('Global', 123344, 24445, 233565, 342555);
+                return counttemplate(counting[index].country,counting[index].active,counting[index].death,counting[index].total,counting[index].recovered);
                 },
               ),
             ),

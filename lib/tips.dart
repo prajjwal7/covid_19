@@ -1,4 +1,4 @@
-import 'package:coronah/custombar.dart';
+import 'custombar.dart';
 import 'package:flutter/material.dart';
 
 class Tips extends StatefulWidget {
@@ -42,17 +42,20 @@ class _TipsState extends State<Tips> {
             child: ListView(
               children: <Widget>[
                 SizedBox(height: 20,),
-                Image.asset('assets/tip1.jpg'),
+                Image.asset('assets/1.jpg',height:170,width:170),
                 SizedBox(height: 20,),
-                Image.asset('assets/tip2.jpg'),
+                Image.asset('assets/2.jpg',height:170,width:170),
                 SizedBox(height: 20,),
-                Image.asset('assets/tip1.jpg'),
+                Image.asset('assets/3.png',height:170,width:170),
                 SizedBox(height: 20,),
-                Image.asset('assets/tip2.jpg'),
+                Image.asset('assets/4.png',height:170,width:170),
                 SizedBox(height: 20,),
-                Image.asset('assets/tip1.jpg'),
+                Image.asset('assets/5.jpg',height:170,width:170),
                 SizedBox(height: 20,),
-
+                Image.asset('assets/6.jpg',height:170,width:170),
+                SizedBox(height: 20,),
+                Image.asset('assets/7.webp',height:170,width:170),
+                SizedBox(height: 20,),
               ],
             ),
           ),
