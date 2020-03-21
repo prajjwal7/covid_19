@@ -47,6 +47,7 @@ class Tales extends StatefulWidget {
 
 class _TalesState extends State<Tales> {
   var tale= new List<Tale>();
+  var copy = 'Copy Link';
 
 
   _getTale() {
@@ -57,7 +58,13 @@ class _TalesState extends State<Tales> {
       });
     });
   }
-
+  _copyLink(){
+    
+    setState(() {
+      Clipboard.setData(ClipboardData(text: 'https://forms.gle/AYEo1H6zNxr1FAcY7'));
+      copy = copy=='Copy Link'?'Copied':'Copy Link';
+    });
+  }
   initState() {
     super.initState();
     _getTale();
@@ -95,8 +102,8 @@ class _TalesState extends State<Tales> {
                   ),
 
                   OutlineButton(
-                    child: Text('Copy Link',style: TextStyle(color: Colors.blue),),
-                    onPressed: () => Clipboard.setData(ClipboardData(text: 'https://forms.gle/AYEo1H6zNxr1FAcY7')),
+                    child: Text(copy,style: TextStyle(color: Colors.blue),),
+                    onPressed: () => _copyLink(),// => Clipboard.setData(ClipboardData(text: 'https://forms.gle/AYEo1H6zNxr1FAcY7')),
                   ),
                   SizedBox(
                     width: 10,
